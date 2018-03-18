@@ -3,11 +3,11 @@ defmodule Sendinc.Config do
   An interface to fetch configurations for SendInc API Client
   """
 
-  def sendinc_email() do
+  def email() do
     config(:email, System.get_env("SENDINC_EMAIL"))
   end
 
-  def sendinc_password() do
+  def password() do
     config(:password, System.get_env("SENDINC_PASSWORD"))
   end
 
@@ -16,7 +16,7 @@ defmodule Sendinc.Config do
   end
 
   def requester() do
-    config(:requester, Sendinc.HTTPJSON)
+    config(:requester, Sendinc.Curl)
   end
 
   def config(key, default \\ nil) do

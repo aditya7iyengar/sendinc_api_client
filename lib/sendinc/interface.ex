@@ -25,25 +25,16 @@ defmodule Sendinc.Interface do
         |> get_requester(requester).request()
       end
 
-      defp schema() do
-        case Module.get_attribute(__MODULE__, :schema) do
-          nil -> raise "@schema undefined for #{__MODULE__}"
-          schema -> schema
-        end
+      def schema() do
+        @schema
       end
 
       defp translator() do
-        case Module.get_attribute(__MODULE__, :translator) do
-          nil -> raise "@translator undefined for #{__MODULE__}"
-          translator -> translator
-        end
+        @translator
       end
 
       defp struct() do
-        case Module.get_attribute(__MODULE__, :struct) do
-          nil -> raise "@struct undefined for #{__MODULE__}"
-          struct -> struct
-        end
+        @struct
       end
 
       defp get_requester(:default), do: Sendinc.Config.requester()

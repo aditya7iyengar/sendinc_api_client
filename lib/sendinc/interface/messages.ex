@@ -3,9 +3,9 @@ defmodule Sendinc.Messages do
   This module is an interface to interact with Sendinc.Message schema
   """
 
-  use Sendinc.Interface
-
   @schema Sendinc.Message
   @translator Sendinc.MessageTranslator
   @struct %Sendinc.Message{}
+
+  use Sendinc.Interface
 end
